@@ -10,15 +10,15 @@ const fs = require('fs');
    });
  };
 
- module.exports.touch = () => {
-  fs.writeFile(file, data, (err) => {
+ module.exports.touch = (userInput) => {
+  fs.writeFile(userInput, data, (err) => {
   	if (err) throw err;
-  		console.log('File creatd');
+  		console.log('File created');
   });
 };
 
-module.exports.mkdir = () => {
-  fs.mkdir('./', {recursive: true}, (err) => {
+module.exports.mkdir = (userInput) => {
+  fs.mkdir('./' + '${userInput}', {recursive: true}, (err) => {
   	if (err) throw err;
   	console.log('Directory made')
   });
